@@ -69,7 +69,7 @@ div#switch {
 
 div#switch button {
   width: 32px;
-  height: 32px;
+  height: 31px;
   
   background: white var(--switch-bg-url) no-repeat center;
   border: 0;
@@ -80,11 +80,12 @@ div#switch button {
   top: 50%;
   left: 0;
   transform: translateY(-50%);
+
+  animation: slide-back .4s forwards;
 }
 
 .light #switch button {
- right: 0;
- left: initial;
+  animation: slide .2s forwards;
 }
 
 div#switch span {
@@ -165,5 +166,23 @@ footer {
 
   .light {
     --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+@keyframes slide{
+  from{
+    left: 0;
+  }
+  to {
+    left: 50%
+   }
+}
+
+@keyframes slide-back{
+  from{
+    left: 50%;
+  }
+  to {
+    left: 0%;
   }
 }
